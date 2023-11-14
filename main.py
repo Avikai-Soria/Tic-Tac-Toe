@@ -109,7 +109,7 @@ def calculate_line_value(line):
     """
     Calculate the value of a line (row, column, or diagonal) for a player.
     Positive values represent X signs, and negative values represent O signs.
-    :param line: A list of 3 values, can represnt row, column or diagonal
+    :param line: A list of 3 values, can represent row, column or diagonal
     :return: The value of the received line
     """
     x_count = line.count(X)
