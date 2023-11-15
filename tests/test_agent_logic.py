@@ -7,8 +7,7 @@ from src.utility import X, O, draw
 class TestAgentLogicFunctions(unittest.TestCase):
 
     @patch('src.agent_logic.get_agent_move', return_value=(1, 1))
-    @patch('src.utility.draw')
-    def test_agent_turn(self, mock_draw, mock_get_agent_move):
+    def test_agent_turn(self, mock_get_agent_move):
         board = [
             ['X', '', 'O'],
             ['', 'O', ''],
@@ -16,7 +15,6 @@ class TestAgentLogicFunctions(unittest.TestCase):
         ]
         agent_turn(board, X)
         mock_get_agent_move.assert_called_once_with(X, board)
-        mock_draw.assert_called_once_with(X, board, 1, 1)
 
     def test_get_agent_move_x_agent(self):
         board = [

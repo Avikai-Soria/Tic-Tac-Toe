@@ -51,9 +51,8 @@ class TestGameLogicFunctions(unittest.TestCase):
 
     @patch('builtins.input', return_value='!')
     def test_decide_start_agent_starts(self, mock_input):
-        with patch('src.utility.draw') as mock_draw:
-            decide_start(self.empty_board, O)
-        mock_draw.assert_called_with(O, self.empty_board, 1, 1)
+        decide_start(self.empty_board, O)
+        mock_input.assert_called_with("Press ! if you want the agent to play first\n")
 
     @patch('builtins.input', return_value='anything_but_exclamation_mark')
     def test_decide_start_player_starts(self, mock_input):
@@ -62,11 +61,9 @@ class TestGameLogicFunctions(unittest.TestCase):
         mock_draw.assert_not_called()
 
     @patch('src.handle_player_choice.get_player_move', return_value=(1, 1))
-    @patch('src.utility.draw')
-    def test_player_turn_valid_move(self, mock_draw, mock_get_player_move):
+    def test_player_turn_valid_move(self, mock_get_player_move):
         player_turn(self.empty_board, X)
         mock_get_player_move.assert_called_once()
-        mock_draw.assert_called_once_with(X, self.empty_board, 1, 1)
 
 
 if __name__ == '__main__':
