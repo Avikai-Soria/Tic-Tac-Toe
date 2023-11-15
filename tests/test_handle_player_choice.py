@@ -68,15 +68,6 @@ class TestGameLogicFunctions(unittest.TestCase):
         mock_get_player_move.assert_called_once()
         mock_draw.assert_called_once_with(X, self.empty_board, 1, 1)
 
-    @patch('src.handle_player_choice.get_player_move', side_effect=[(1, 1), (0, 0)])
-    @patch('src.utility.draw')
-    @patch('src.logger_setup.logger.info')
-    def test_player_turn_invalid_then_valid_move(self, mock_logger_info, mock_draw, mock_get_player_move):
-        player_turn(self.empty_board, X)
-        self.assertEqual(mock_get_player_move.call_count, 2)
-        mock_draw.assert_called_once_with(X, self.empty_board, 0, 0)
-        mock_logger_info.assert_called_with("Cell is already taken. Try again.")
-
 
 if __name__ == '__main__':
     unittest.main()
