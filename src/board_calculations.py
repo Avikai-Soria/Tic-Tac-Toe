@@ -20,9 +20,9 @@ def calculate_line_value(line):
         return TWO_ROW  # Two in a row for x
     elif o_count == 2 and empty_count == 1:
         return -TWO_ROW  # Two in a row for o
-    elif x_count == SINGLE_ROW and empty_count == 2:
+    elif x_count == 1 and empty_count == 2:
         return 10  # One for x
-    elif o_count == SINGLE_ROW and empty_count == 2:
+    elif o_count == 1 and empty_count == 2:
         return -10  # One for o
     else:
         return 0  # No one can win this line
