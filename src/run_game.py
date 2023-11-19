@@ -6,20 +6,21 @@ from src.utility import print_board
 
 def run_game(board: list[list[str]], player_mark: str, agent_mark: str):
     """
-    This function let player pick moves, then let agent pick his move, until someone wins
-    :param board: The initial board
-    :param player_mark: The mark of the player, x or o
-    :param agent_mark: The mark of the agent, x or o
-    :return:
+    This function lets the player pick moves, then lets the agent pick his move, until someone wins.
+    :param board: The initial board.
+    :param player_mark: The mark of the player, x or o.
+    :param agent_mark: The mark of the agent, x or o.
+    :return: The result of the game (winner or "Tie").
     """
-    decide_player_turn(board, player_mark)
-    print_board(board)
-    result: str = get_game_result(board)
-    if result is not None:  # Game is over
-        return result
+    while True:
+        decide_player_turn(board, player_mark)
+        print_board(board)
+        result: str = get_game_result(board)
+        if result is not None:  # Game is over
+            return result
 
-    play_agent_turn(board, agent_mark)
-    print_board(board)
-    result: str = get_game_result(board)
-    if result is not None:  # Game is over
-        return result
+        play_agent_turn(board, agent_mark)
+        print_board(board)
+        result: str = get_game_result(board)
+        if result is not None:  # Game is over
+            return result
