@@ -1,6 +1,6 @@
-from src.handle_player_choice import decide_players_marks, decide_who_starts, decide_player_turn
-from src.logger_setup import global_logger as logger
-from src.run_game import run_game
+from src.user_input.handle_player_choice import decide_players_marks, decide_who_starts
+from src.utils.logger_setup import global_logger as logger
+from src.game_flow.run_game import run_game
 
 EMPTY_BOARD: list[list[str]] = [['', '', ''], ['', '', ''], ['', '', '']]
 

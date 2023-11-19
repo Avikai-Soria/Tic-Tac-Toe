@@ -1,5 +1,5 @@
-from src.logger_setup import global_logger as logger
-from src.utility import X, O, draw, print_board
+from src.utils.logger_setup import global_logger as logger
+from src.utils.utils import X, O, draw, print_board
 
 
 def decide_players_marks():

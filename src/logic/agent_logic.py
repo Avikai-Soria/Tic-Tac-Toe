@@ -1,7 +1,7 @@
 import copy
 
-from src.board_calculations import calculate_board_value
-from src.utility import draw
+from src.calculations.board_calculations import calculate_board_value
+from src.utils.utils import draw
 
 
 def play_agent_turn(board, agent):

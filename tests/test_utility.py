@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from src.utility import print_board, draw, X, O
+from src.utils import print_board, draw, X, O
 
 
 class TestUtilityFunctions(unittest.TestCase):

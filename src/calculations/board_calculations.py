@@ -1,7 +1,7 @@
 from typing import Union
 
-from src.board_states import is_game_won, is_game_tied
-from src.utility import X, O, WIN, TWO_ROW, SINGLE_ROW
+from src.states.board_states import is_game_won, is_game_tied
+from src.utils.utils import X, O, WIN, TWO_ROW, SINGLE_ROW
 
 
 def calculate_line_value(line: list[str]) -> int:

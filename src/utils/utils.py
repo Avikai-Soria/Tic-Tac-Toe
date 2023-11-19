@@ -1,4 +1,4 @@
-from src.logger_setup import global_logger as logger
+from src.utils.logger_setup import global_logger as logger
 
 X = 'X'
 O = 'O'

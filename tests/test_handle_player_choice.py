@@ -1,8 +1,7 @@
 import unittest
-from unittest.mock import patch, MagicMock
-from src.logger_setup import global_logger as logger
-from src.handle_player_choice import decide_players_marks, get_player_move, decide_who_starts, decide_player_turn
-from src.utility import X, O, draw
+from unittest.mock import patch
+from src.user_input.handle_player_choice import decide_players_marks, get_player_move, decide_who_starts, decide_player_turn
+from src.utils import X, O
 
 
 class TestHandlePlayerChoiceFunctions(unittest.TestCase):

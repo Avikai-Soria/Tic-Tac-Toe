@@ -1,7 +1,7 @@
-from src.agent_logic import play_agent_turn
-from src.board_calculations import get_game_result
-from src.handle_player_choice import decide_player_turn
-from src.utility import print_board
+from src.logic.agent_logic import play_agent_turn
+from src.calculations.board_calculations import get_game_result
+from src.user_input.handle_player_choice import decide_player_turn
+from src.utils.utils import print_board
 
 
 def run_game(board: list[list[str]], player_mark: str, agent_mark: str):

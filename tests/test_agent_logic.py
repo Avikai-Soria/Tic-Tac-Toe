@@ -1,12 +1,12 @@
 import unittest
 from unittest.mock import patch
-from src.agent_logic import play_agent_turn, get_agent_move
-from src.utility import X, O, draw
+from src.logic.agent_logic import play_agent_turn, get_agent_move
+from src.utils import X, O
 
 
 class TestAgentLogicFunctions(unittest.TestCase):
 
-    @patch('src.agent_logic.get_agent_move', return_value=(1, 1))
+    @patch('src.logic.get_agent_move', return_value=(1, 1))
     def test_agent_turn(self, mock_get_agent_move):
         board = [
             ['X', '', 'O'],

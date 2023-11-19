@@ -1,6 +1,6 @@
 import unittest
-from src.utility import WIN, TWO_ROW
-from src.board_states import is_game_won, is_game_tied
+from src.utils import WIN, TWO_ROW
+from src.states.board_states import is_game_won, is_game_tied
 
 
 class TestGameStateFunctions(unittest.TestCase):

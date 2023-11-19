@@ -1,6 +1,6 @@
 import unittest
-from src.utility import X, O, WIN, TWO_ROW, SINGLE_ROW
-from src.board_calculations import calculate_line_value, calculate_board_value
+from src.utils import X, O, WIN, TWO_ROW, SINGLE_ROW
+from src.calculations.board_calculations import calculate_line_value, calculate_board_value
 
 
 class TestBoardCalculationsFunctions(unittest.TestCase):

@@ -1,4 +1,4 @@
-from src.utility import WIN, TWO_ROW
+from src.utils.utils import WIN, TWO_ROW
 
 
 def is_game_won(value: int) -> bool:
