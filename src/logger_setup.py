@@ -6,6 +6,11 @@ from logging.handlers import RotatingFileHandler
 
 
 def setup_logger():
+    """
+    Creates a customized logger that prints and writes to log on
+    Supports global environment for log folder path
+    :return: The logger
+    """
     logger = logging.getLogger(__name__)
 
     logger.setLevel(logging.INFO)

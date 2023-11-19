@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from src.agent_logic import agent_turn, get_agent_move
+from src.agent_logic import play_agent_turn, get_agent_move
 from src.utility import X, O, draw
 
 
@@ -13,7 +13,7 @@ class TestAgentLogicFunctions(unittest.TestCase):
             ['', 'O', ''],
             ['', 'X', 'X']
         ]
-        agent_turn(board, X)
+        play_agent_turn(board, X)
         mock_get_agent_move.assert_called_once_with(X, board)
 
     def test_get_agent_move_x_agent(self):

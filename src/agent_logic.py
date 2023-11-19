@@ -4,7 +4,7 @@ from src.board_calculations import calculate_board_value
 from src.utility import draw
 
 
-def agent_turn(board, agent):
+def play_agent_turn(board, agent):
     """
     Represents agent turn, picks a move and draws it
     :param board: The current board
@@ -12,10 +12,10 @@ def agent_turn(board, agent):
     :return: Nothing, just updates the board
     """
     row, column = get_agent_move(agent, board)
-    draw(agent, board, row, column)
+    draw(board, agent, row, column)
 
 
-def get_agent_move(agent, board):
+def get_agent_move(agent, board) -> tuple[int, int]:
     """
     The agent tests all possible moves, calculates their values and picks
     The row and column that will give him the best value

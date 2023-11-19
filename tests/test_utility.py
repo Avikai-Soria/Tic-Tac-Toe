@@ -22,7 +22,7 @@ class TestUtilityFunctions(unittest.TestCase):
         row = 0
         column = 1
 
-        draw(player, self.empty_board, row, column)
+        draw(self.empty_board, player, row, column)
 
         # Check if the board was updated correctly
         self.assertEqual(self.empty_board[row][column], player)

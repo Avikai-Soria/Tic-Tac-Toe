@@ -2,22 +2,23 @@ from src.logger_setup import global_logger as logger
 from src.utility import X, O, draw, print_board
 
 
-def get_player_sign():
+def decide_players_marks():
     """
     Here the player choose whether he wants to play as X or O
+    Includes input's validation
     :return: Player's symbol and agent's symbol, in their order
     """
     while True:
-        choice = input("Pick up your sign: x/o\n")
-        if choice.lower() == 'x':
+        choice = input("Pick up your sign: x/o\n").lower()
+        if choice == 'x':
             return X, O
-        elif choice.lower() == 'o':
+        elif choice == 'o':
             return O, X
         else:
             logger.info("Invalid input. Please choose 'x' or 'o'.")
 
 
-def player_turn(board, player):
+def decide_player_turn(board: list[list[str]], player: str):
     """
     Represents the player's turn
     Calls a function to get input then validate it
@@ -29,13 +30,13 @@ def player_turn(board, player):
     while True:
         row, column = get_player_move(board)
         if board[row][column] == '':
-            draw(player, board, row, column)
+            draw(board, player, row, column)
             break
         else:
             logger.info("Cell is already taken. Try again.")
 
 
-def get_player_move(board):
+def get_player_move(board: list[list[str]]):
     """
     Asks the player to provide next move, and validate the syntax and move
     :param board: The current board
@@ -62,15 +63,22 @@ def get_player_move(board):
             logger.info("Invalid input. Please use the format 'x-y', where x and y are numbers from 1 to 3.")
 
 
-def decide_start(board, agent):
+def decide_who_starts(board: list[list[str]], agent_mark: str):
     """
-    Decides whether player starts or agent starts.
-    If agent starts, it will always pick cell [2,2] as it's the optimal choice
-    :param board: The current board
-    :param agent: The agent's sign, X or Y
-    :return: Nothing, just updates the board if needed
+    Decides whether the player starts first.
+    If agent starts, it will always pick cell [2,2] as it's the optimal choice.
+    :param board: The current board.
+    :param agent_mark: The agent's sign, X or Y.
+    :return: Nothing, just updates the board if needed.
     """
-    choice = input("Press ! if you want the agent to play first\n")
-    if choice == '!':
-        draw(agent, board, 1, 1)
-        print_board(board)
+    while True:
+        choice = input("Do you want to play first? (y/n): ").lower()
+
+        if choice == 'y':
+            return
+        elif choice == 'n':
+            draw(board, agent_mark, 1, 1)  # Assuming draw is a function that makes a move on the board
+            print_board(board)
+            return
+        else:
+            logger.info("Invalid input. Please enter 'y' or 'n'.")

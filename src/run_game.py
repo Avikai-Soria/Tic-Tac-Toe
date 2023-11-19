@@ -1,0 +1,25 @@
+from src.agent_logic import play_agent_turn
+from src.board_calculations import get_game_result
+from src.handle_player_choice import decide_player_turn
+from src.utility import print_board
+
+
+def run_game(board: list[list[str]], player_mark: str, agent_mark: str):
+    """
+    This function let player pick moves, then let agent pick his move, until someone wins
+    :param board: The initial board
+    :param player_mark: The mark of the player, x or o
+    :param agent_mark: The mark of the agent, x or o
+    :return:
+    """
+    decide_player_turn(board, player_mark)
+    print_board(board)
+    result: str = get_game_result(board)
+    if result is not None:  # Game is over
+        return result
+
+    play_agent_turn(board, agent_mark)
+    print_board(board)
+    result: str = get_game_result(board)
+    if result is not None:  # Game is over
+        return result

@@ -1,42 +1,31 @@
-from src.agent_logic import agent_turn
-from src.board_calculations import calculate_board_value
-from src.board_states import game_won, game_tied
-from src.handle_player_choice import get_player_sign, decide_start, player_turn
+from src.handle_player_choice import decide_players_marks, decide_who_starts, decide_player_turn
 from src.logger_setup import global_logger as logger
-from src.utility import print_board
+from src.run_game import run_game
+
+EMPTY_BOARD: list[list[str]] = [['', '', ''], ['', '', ''], ['', '', '']]
 
 
 def main():
-    board = [['', '', ''], ['', '', ''], ['', '', '']]
+    board: list[list[str]] = EMPTY_BOARD
     logger.info("Let's play tic tac toe! Good luck")
 
-    player, agent = get_player_sign()
+    player_mark: str
+    agent_mark: str
 
-    decide_start(board, agent)
+    player_mark, agent_mark = decide_players_marks()
 
-    while True:
-        player_turn(board, player)
-        print_board(board)
-        if game_result(board, player):
-            logger.info("Nice one!")
-            break
+    decide_who_starts(board, agent_mark)
 
-        agent_turn(board, agent)
-        print_board(board)
-        if game_result(board, agent):
-            logger.info("Better luck next time!")
-            break
+    result: str = run_game(board, player_mark, agent_mark)
 
+    logger.info(f"The result of the match is {result}.")
 
-def game_result(board, current_player):
-    value = calculate_board_value(board)
-    if game_won(value):
-        logger.info(f"{current_player} wins!")
-        return True
-    elif game_tied(board):
-        logger.info("Game tied")
-        return True
-    return False
+    if result == player_mark:
+        logger.info("Nice one!")
+    elif result == "Tie":
+        logger.info("Good try")
+    else:
+        logger.info("Better luck next time!")
 
 
 if __name__ == '__main__':

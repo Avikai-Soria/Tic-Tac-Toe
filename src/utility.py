@@ -7,14 +7,14 @@ TWO_ROW = 50
 SINGLE_ROW = 10
 
 
-def print_board(matrix):
+def print_board(board: list[list[str]]):
     """
     Receives a board and prints it nicely
-    :param matrix: A list of 3 lists, each contains 3 values.
+    :param board: A list of 3 lists, each contains 3 values.
     :return: Nothing, just prints
     """
     hr = "----------------"
-    for row in matrix:
+    for row in board:
         logger.info(hr)
 
         line = ""
@@ -25,7 +25,7 @@ def print_board(matrix):
     logger.info(hr)
 
 
-def draw(player, board, row, column):
+def draw(board: list[list[str]], player: str, row: int, column: int):
     """
     Updates the board with the player's sign in the received row and column
     :param player: The player's sign, X or O
