@@ -4,7 +4,7 @@ from src.user_input.handle_player_choice import decide_player_turn
 from src.utils.utils import print_board
 
 
-def run_game(board: list[list[str]], player_mark: str, agent_mark: str):
+def run_game(board: list[list[str]], player_mark: str, agent_mark: str) -> None:
     """
     This function lets the player pick moves, then lets the agent pick his move, until someone wins.
     :param board: The initial board.

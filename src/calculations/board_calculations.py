@@ -1,7 +1,7 @@
 from typing import Union
 
 from src.states.board_states import is_game_won, is_game_tied
-from src.utils.utils import X, O, WIN, TWO_ROW, SINGLE_ROW
+from src.utils import X, O, WIN, TWO_ROW, SINGLE_ROW
 
 
 def calculate_line_value(line: list[str]) -> int:
@@ -27,8 +27,7 @@ def calculate_line_value(line: list[str]) -> int:
         return SINGLE_ROW  # One for x
     elif o_count == 1 and empty_count == 2:
         return -SINGLE_ROW  # One for o
-    else:
-        return 0  # No one can win this line
+    return 0  # No one can win this line
 
 
 def calculate_board_value(board: list[list[str]]) -> int:
