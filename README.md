@@ -1,4 +1,17 @@
-The game is played on a grid that's 3 squares by 3 squares.
-You are X , your friend (or the computer in this case) is O . Players take turns putting their marks in empty squares.
-The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
-When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+# Tic-Tac-Toe Game
+
+Welcome to the classic Tic-Tac-Toe game! This simple yet entertaining game is played on a 3x3 grid. The rules are straightforward:
+
+- You are represented by the symbol **X**, and your opponent (either a friend or the computer) is represented by **O**.
+- Players take turns placing their marks in empty squares on the grid.
+- The first player to achieve a line of 3 marks, either horizontally, vertically, or diagonally, is declared the winner.
+- If all 9 squares are filled and no player has a line of 3 marks, the game ends in a tie.
+
+## How to Play
+
+1. Clone this repository to your local machine.
+2. Open the terminal and navigate to the project directory.
+3. Run the game using the command `python tic_tac_toe.py`.
+4. Follow the on-screen instructions to make your moves and enjoy the game!
+
+Feel free to customize and extend the game as you wish. Have fun playing Tic-Tac-Toe!
